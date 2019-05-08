@@ -104,4 +104,4 @@ $RECYCLE.BIN/
 *.lnk
 
 # Properties
-src/main/resources/application.properties
+*.properties
