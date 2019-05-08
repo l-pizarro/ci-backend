@@ -5,7 +5,9 @@ pipeline {
 
     stages {
         stage('Checkout') {
-            git 'https://github.com/l-pizarro/ci-backend'
+            steps {
+                git 'https://github.com/l-pizarro/ci-backend'
+            }
         }
         
         stage('Compile-Package') {
