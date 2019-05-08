@@ -1,3 +1,4 @@
+// Entidad
 package com.tingeso.productos.entidades;
 
 import javax.persistence.Entity;
