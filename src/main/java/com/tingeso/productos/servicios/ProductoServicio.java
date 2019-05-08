@@ -27,7 +27,7 @@ public class ProductoServicio {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public @ResponseBody Optional<Producto> get(@PathVariable Long id){
+    public @ResponseBody Optional<Producto> get(@PathVariable Integer id){
         return productoRepository.findById(id);
     }
 

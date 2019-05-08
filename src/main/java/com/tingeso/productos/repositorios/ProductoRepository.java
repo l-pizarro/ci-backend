@@ -7,6 +7,6 @@ import com.tingeso.productos.entidades.Producto;
 // This will be AUTO IMPLEMENTED by Spring into a Bean called userRepository
 // CRUD refers Create, Read, Update, Delete
 
-public interface ProductoRepository extends CrudRepository<Producto, Long> {
-    Producto findByCodigoProducto(Long codigoProducto);
+public interface ProductoRepository extends CrudRepository<Producto, Integer> {
+    Producto findByCodigoProducto(Integer codigoProducto);
 }

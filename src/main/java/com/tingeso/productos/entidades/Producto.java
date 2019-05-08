@@ -1,10 +1,6 @@
-// Entidad Producto
 package com.tingeso.productos.entidades;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,13 +12,12 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 @Setter
+@Table(name="producto")
 public class Producto {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private Long codigoProducto;
+    private Integer codigoProducto;
     private String nombreProducto;
-    private String fechaVencimiento;
     private String categoria;
     private Integer precio;
-
 }
