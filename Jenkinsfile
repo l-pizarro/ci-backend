@@ -1,4 +1,4 @@
-node {
+pipeline {
     agent any
 
     tools {maven 'MAVEN 3.6.1'}
