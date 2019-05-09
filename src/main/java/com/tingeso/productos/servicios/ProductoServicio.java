@@ -2,6 +2,7 @@ package com.tingeso.productos.servicios;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -16,6 +17,7 @@ import com.tingeso.productos.repositorios.ProductoRepository;
 
 @RestController
 @RequestMapping(path="/productos")
+@CrossOrigin(origins = "http://157.230.12.110:8082/")
 public class ProductoServicio {
 
 	@Autowired
