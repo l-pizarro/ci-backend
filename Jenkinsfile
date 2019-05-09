@@ -1,27 +1,18 @@
-pipeline {
-    agent any
-
-    tools {maven 'MAVEN 3.6.1'}
-
-    stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/l-pizarro/ci-backend'
-            }
+node {
+    stage('Checkout') {
+        steps {
+            git 'https://github.com/l-pizarro/ci-backend'
         }
-        
-        stage('Compile-Package') {
-            steps {
-                sh 'mvn clean package'
-            }
-        }
+    }
+    
+    stage('Compile-Package') {
+        def mvnHome = tool name: 'MAVEN 3.6.1', type: 'maven'
+        sh '$mvnHome/bin/mvn clean package'
+    }
 
-        stage('Deploy-Tomcat') {
-            steps {
-                sshagent(['tomcat-admin']) {
-                    sh 'ssh -o StrictHostKeyChecking=no target/productos-0.0.1-SNAPSHOT.war tomcat@http://157.230.12.110:/opt/tomcat/apache-tomcat-9.0.19/webapps/'
-                }
-            }
+    stage('Deploy-Tomcat') {
+        sshagent(['tomcat-admin']) {
+            sh 'ssh -o StrictHostKeyChecking=no target/*.war tomcat@http://157.230.12.110:/opt/tomcat/apache-tomcat-9.0.19/webapps/'
         }
     }
 }
