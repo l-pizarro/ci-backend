@@ -19,7 +19,7 @@ pipeline {
         stage('Deploy-Tomcat') {
             steps {
                 sshagent(['tomcat-admin']) {
-                    sh 'ssh -o StrictHostKeyChecking=no target/*.war tomcat@http://157.230.12.110:/opt/tomcat/apache-tomcat-9.0.19/webapps/'
+                    sh 'ssh -o StrictHostKeyChecking=no target/productos-0.0.1-SNAPSHOT.war tomcat@http://157.230.12.110:/opt/tomcat/apache-tomcat-9.0.19/webapps/'
                 }
             }
         }
