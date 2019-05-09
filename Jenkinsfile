@@ -1,8 +1,6 @@
 node {
     stage('Checkout') {
-        steps {
-            git 'https://github.com/l-pizarro/ci-backend'
-        }
+        git 'https://github.com/l-pizarro/ci-backend'
     }
     
     stage('Compile-Package') {
